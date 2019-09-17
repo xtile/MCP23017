@@ -4,6 +4,7 @@ Exemple 'How to use the library MCP23017_I2C' - Rui Pedro Silva; Portugal; 03/20
 Connect a switch to GPB7 and led to GPA0. This program will make the LED turn on when you turn the switch.
 '''
 from MCP23017_I2C import *
+import time
 
 GPIO_CHIP_1 = GPIO_CHIP(0x20, 1) # define chip MCP23017_I2C
 #   GPIO_CHIP( Device address, Pi Model )

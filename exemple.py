@@ -10,7 +10,21 @@ GPIO_CHIP_1 = GPIO_CHIP(0x20, 1) # define chip MCP23017_I2C
 # 0 = Model A, B Rev 2 or B+ Pi ; 1 = Model B Rev 1 Pi) 
 
 GPIO_CHIP_1.setup( 0, 'OUT', 'A') # configure GPA0 like output
-GPIO_CHIP_1.setup( 7, 'IN', 'B') # configure GPB7 like input
+GPIO_CHIP_1.setup( 1, 'OUT', 'A') # configure GPA0 like output
+GPIO_CHIP_1.setup( 2, 'OUT', 'A') # configure GPA0 like output
+GPIO_CHIP_1.setup( 3, 'OUT', 'A') # configure GPA0 like output
+GPIO_CHIP_1.setup( 4, 'OUT', 'A') # configure GPA0 like output
+GPIO_CHIP_1.setup( 5, 'OUT', 'A') # configure GPA0 like output
+GPIO_CHIP_1.setup( 6, 'OUT', 'A') # configure GPA0 like output
+GPIO_CHIP_1.setup( 7, 'OUT', 'A') # configure GPA0 like output
+GPIO_CHIP_1.setup( 0, 'OUT', 'B') # configure GPA0 like output
+GPIO_CHIP_1.setup( 1, 'OUT', 'B') # configure GPA0 like output
+GPIO_CHIP_1.setup( 2, 'OUT', 'B') # configure GPA0 like output
+GPIO_CHIP_1.setup( 3, 'OUT', 'B') # configure GPA0 like output
+GPIO_CHIP_1.setup( 4, 'OUT', 'B') # configure GPA0 like output
+GPIO_CHIP_1.setup( 5, 'OUT', 'B') # configure GPA0 like output
+GPIO_CHIP_1.setup( 6, 'OUT', 'B') # configure GPA0 like output
+GPIO_CHIP_1.setup( 7, 'OUT', 'B') # configure GPA0 like output
 # GPIO_CHIP.setup(pin, io, side)
 # 	pin (0 - 7)  io (IN or OUT)  side (A or B)
 
@@ -23,27 +37,22 @@ GPIO_CHIP_1.setup( 7, 'IN', 'B') # configure GPB7 like input
 
 try:
 	while 1:
-		switch = GPIO_CHIP_1.input(7, 'B') # save the state of GPB7 in 'switch'
-		# GPIO_CHIP.input(pin, side)
-		# 	pin (0 - 7)  side (A or B)
-		
-		if switch==1:
-			print 'Led ON'
-			GPIO_CHIP_1.output(0, 1, 'A') # write in GPA0 1 (high)
-		else:
-			print 'Led OFF'
-			GPIO_CHIP_1.output(0, 0, 'A') # write in GPA0 0 (LOW)
-			# GPIO_CHIP.output(pin, hl, side)
-			# 	pin (0 - 7)  hl (0 or 1)  side (A or B)
-
-		# With one second chip:
-		#switch2 = GPIO_CHIP_2.input(7, 'B')
-		#if switch2==1:
-		#	print 'Led2 ON'
-		#	GPIO_CHIP_2.output(0, 1, 'A') # write in GPA0 1 (high)
-		#else:
-		#	print 'Led2 OFF'
-		#	GPIO_CHIP_2.output(0, 0, 'A') # write in GPA0 0 (LOW)
-		
+		GPIO_CHIP_1.output(0, 0, 'B') # save the state of GPB7 in 'switch'
+		GPIO_CHIP_1.output(1, 0, 'B') # save the state of GPB7 in 'switch'
+		print 'zero state'
+		sleep 5
+		GPIO_CHIP_1.output(0, 1, 'B') # save the state of GPB7 in 'switch'
+		GPIO_CHIP_1.output(1, 0, 'B') # save the state of GPB7 in 'switch'
+		print 'after 1'
+		sleep 5
+		GPIO_CHIP_1.output(0, 0, 'B') # save the state of GPB7 in 'switch'
+		GPIO_CHIP_1.output(1, 0, 'B') # save the state of GPB7 in 'switch'	
+		print 'after 2'
+		sleep 5
+		GPIO_CHIP_1.output(0, 0, 'B') # save the state of GPB7 in 'switch'
+		GPIO_CHIP_1.output(1, 1, 'B') # save the state of GPB7 in 'switch'	
+		print 'after 2'
+		sleep 5
+		# GPIO_CHIP.input(pin, side)		
 except KeyboardInterrupt:
 	print 'End exemple.py!'

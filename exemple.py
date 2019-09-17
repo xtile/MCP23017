@@ -41,19 +41,19 @@ try:
 		GPIO_CHIP_1.output(0, 0, 'B') # save the state of GPB7 in 'switch'
 		GPIO_CHIP_1.output(1, 0, 'B') # save the state of GPB7 in 'switch'
 		print 'zero state'
-		sleep (5)
+		sleep(5)
 		GPIO_CHIP_1.output(0, 1, 'B') # save the state of GPB7 in 'switch'
 		GPIO_CHIP_1.output(1, 0, 'B') # save the state of GPB7 in 'switch'
 		print 'after 1'
-		sleep (5)
+		sleep(5)
 		GPIO_CHIP_1.output(0, 0, 'B') # save the state of GPB7 in 'switch'
 		GPIO_CHIP_1.output(1, 0, 'B') # save the state of GPB7 in 'switch'	
 		print 'after 2'
-		sleep (5)
+		sleep(5)
 		GPIO_CHIP_1.output(0, 0, 'B') # save the state of GPB7 in 'switch'
 		GPIO_CHIP_1.output(1, 1, 'B') # save the state of GPB7 in 'switch'	
 		print 'after 2'
-		sleep (5)
+		sleep(5)
 		# GPIO_CHIP.input(pin, side)		
 except KeyboardInterrupt:
 	print 'End exemple.py!'
